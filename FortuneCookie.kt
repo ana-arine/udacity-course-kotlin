@@ -1,4 +1,6 @@
 
+//Crie um programa com uma função que retorna uma mensagem do cookie da sorte (fortune cookie) que você possa imprimir.
+
 fun getFortuneCookie() : String {
 
     val listFortunes : List<String> = listOf(
@@ -11,16 +13,31 @@ fun getFortuneCookie() : String {
         "Treasure your friends because they are your greatest fortune."
     )
 
-    print("Enter your birthday: ")
+    print("\nEnter your birthday: ")
     val birthday = readLine()?.toIntOrNull() ?: 1
 
-    val division = birthday % (listFortunes.size)
-    return (listFortunes[division])
+//    val division = birthday % (listFortunes.size)
+//    return (listFortunes[division])
+    //or
+    return listFortunes[birthday.rem(listFortunes.size)]
 
 }
 
 fun main() {
 
-    println("Your fortune is: ${getFortuneCookie()}")
+    var fortune: String
 
-}
+    for (i in 1..10) {
+        fortune = getFortuneCookie()
+        println("Your fortune is: $fortune")
+        if (fortune.contains("Take it easy"))
+            break
+        }
+    }
+
+    //or just   println("Your fortune is: ${getFortuneCookie()}")
+
+    // Prática extra:
+    //
+    //Use um loop for que execute o código até o máximo de 10 vezes ou até que a fortuna "Take it easy" seja encontrada.
+
