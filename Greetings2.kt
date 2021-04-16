@@ -1,8 +1,7 @@
 
 fun main(args: Array<String>) {
 
-  //  val hour = 22
-    val isEarly = println({args[5].toInt()})
-        //"Good morning, Kotlin." else "Good night, Kotlin.")
-
+    println(if (args[0].toInt() < 12) "Good morning, Kotlin." else "Good night, Kotlin.")
+//or
+    println("${if (args[0].toInt() < 12) "Good Morning, Kotlin" else "Good Night, Kotlin"}")
 }
