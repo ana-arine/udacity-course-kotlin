@@ -25,6 +25,7 @@ fun feedTheFish() {
     val day = randomDay()
     val food = fishFood(day)
     println("Today is $day and the fish are going to eat $food.")
+
     //3 ways to call the function:
     shouldChangeWater(day, 50, 50)  //using all the 3 arguments in the right order.
     shouldChangeWater(day)  //calling only the required argument and use the default values for temp. and dirty.
@@ -32,6 +33,7 @@ fun feedTheFish() {
 
     swim( 50, speed = "slow")
 }
+
 
 fun swim(time: Int, speed: String = "fast"){
     println("swimming $speed")
