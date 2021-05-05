@@ -1,16 +1,46 @@
 import java.util.*
 
 fun main(args: Array<String>) {
-    println("Hello, ${args[0]}")
+  //  println("Hello, ${args[0]}")
 
-    println(feedTheFish())
+   feedTheFish()
+
+    //repeat - function from standard library
+    repeat(3) {
+        println("There's a fish swimming")
+    }
 }
+
+fun getDirtySensorReading() = 20
 
 fun shouldChangeWater(
     day: String,
     temperature: Int = 22,
-    dirty: Int = 20) : Boolean {
-return true
+    dirty: Int = getDirtySensorReading()) : Boolean {
+
+//    //using "when" with no parameters works as a sequence of "if-else" checks.
+//    return when {
+//        temperature > 30 -> true
+//        dirty > 25 -> true
+//        day == "Sunday" -> true
+//        else -> false
+//    }
+
+    //Better way to do it:
+    val isTooHot = temperature > 30
+    val isDirty = dirty > 30
+    val isSunday = day == "Sunday"
+
+    return when {
+        isTooHot -> true
+        isDirty -> true
+        isSunday -> true
+        else -> false
+    }
+
+    //or
+
+
 }
 
 //fun shouldChangeWater2(
@@ -47,7 +77,7 @@ fun randomDay() : String {
 
 fun fishFood (day : String) : String {
 
-   return when (day) {
+    return when (day) {
         "Monday" -> "flakes"
         "Tuesday" -> "pellets"
         "Wednesday" -> "redworms"
@@ -55,7 +85,7 @@ fun fishFood (day : String) : String {
         "Friday" -> "mosquitoes"
         "Saturday" -> "lettuce"
         "Sunday" -> "plankton"
-       else -> "spirulina"
+        else -> "spirulina"
     }
 
 
