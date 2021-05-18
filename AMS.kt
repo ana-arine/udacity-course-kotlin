@@ -100,5 +100,17 @@ fun eagerExample() {
     println(filtered)                       //não imprime nada
     println(filtered.toList())
 
+    //Quiz
+    val spices = listOf("curry", "pepper", "cayenne", "ginger", "red curry", "green curry", "red pepper", "curcumine", "colorific" )
+//  Classificando curries pelo tamanho da string
+    println(spices.filter { it.contains("curry") }.sortedBy { it.length })
+
+//  Filtrando pelos que começam com 'c' e terminam com 'e'
+    println(spices.filter { it.startsWith('c') && it.endsWith('e') })
+
+//  Filtrando os 3 primeiros itens com 'c'
+    println(spices.take(3).filter{it.startsWith('c')})
+ //   [curry, cayenne, curcumine]
+
 }
 
