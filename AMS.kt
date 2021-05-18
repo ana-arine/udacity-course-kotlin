@@ -9,6 +9,8 @@ fun main(args: Array<String>) {
     repeat(3) {
         println("There's a fish swimming")
     }
+
+    eagerExample()
 }
 
 fun getDirtySensorReading() = 20
@@ -84,6 +86,19 @@ fun fishFood (day : String) : String {
         "Sunday" -> "plankton"
         else -> "spirulina"
     }
+}
 
+fun eagerExample() {
+    val decorations = listOf("rock", "pagoda", "plastic plant", "alligator", "flowerpot")
+    val eager = decorations.filter { it[0] == 'p' }
+    println(eager)
+
+    println(decorations.filter { true })  //imprime todos os elementos da lista
+
+    //apply filter lazily
+    val filtered = decorations.asSequence().filter { it[0] == 'p' }
+    println(filtered)                       //não imprime nada
+    println(filtered.toList())
 
 }
+
