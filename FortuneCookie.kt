@@ -46,6 +46,7 @@ fun main(args: Array<String>) {
 
     var fortune: String
 
+
     for (i in 1..10) {
         fortune = getFortuneCookie()
         println("Your fortune is: $fortune")
@@ -53,6 +54,32 @@ fun main(args: Array<String>) {
             break
         }
     }
+
+
+//Loops
+//
+//Utilizando repeat:
+//
+//fun main(args: Array<String>) {
+//    var fortune: String = ""
+//    repeat (10) {
+//        fortune = getFortune(getBirthday())
+//        println("\nYour fortune is: $fortune")
+//        if (fortune.contains("Take it easy")) break;
+//    }
+//}
+
+//Utilizando um loop while:
+//
+//fun main(args: Array<String>) {
+//    var fortune: String = ""
+//    while (!fortune.contains("Take it easy")) {
+//        fortune = getFortune(getBirthday())
+//        println("\nYour fortune is: $fortune")
+//    }
+//}
+
+
 
     //or just   println("Your fortune is: ${getFortuneCookie()}")
 
