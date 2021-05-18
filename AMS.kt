@@ -38,9 +38,6 @@ fun shouldChangeWater(
         else -> false
     }
 
-    //or
-
-
 }
 
 //fun shouldChangeWater2(
