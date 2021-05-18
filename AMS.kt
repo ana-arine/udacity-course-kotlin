@@ -11,7 +11,43 @@ fun main(args: Array<String>) {
     }
 
     eagerExample()
+
+    //Lambda function
+val swim = { println("swim weeee \n")}
+    swim()
+
+    var dirty = 20
+    val waterFilter = { dirty: Int -> dirty / 2 }
+    println(waterFilter(dirty))   //Just like a regular function
+
+    val waterFilter2: (Int) -> Int = { dirty -> dirty / 2}
+    //println(waterFilter2(dirty))
+
+    fun feedFish(dirty: Int) = dirty + 10
+
+    //Lambda utility
+    fun updateDirty(dirty: Int, operation: (Int) -> Int) : Int {
+        return operation(dirty)
+    }
+
+    fun dirtyProcessor() {
+        dirty = updateDirty(dirty, waterFilter2)
+        dirty = updateDirty(dirty, ::feedFish)
+        dirty = updateDirty(dirty, { dirty ->
+            dirty + 50
+        })
+    }
+fun rando() : String {
+    return("ola")
 }
+    val rando1 = rando()
+    val rando2 = {rando()}
+
+    println(rando1)
+    println(rando2)
+    //"The last parameter syntax"
+}
+
 
 fun getDirtySensorReading() = 20
 
